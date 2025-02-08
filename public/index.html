@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Calendar 2025</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="filter-container">
+        <select id="location-input">
+            <option value="" disabled selected>Select Location</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="pune">Pune</option>
+            <option value="nagpur">Nagpur</option>
+            <option value="chennai">Chennai</option>
+            <option value="coimbatore">Coimbatore</option>
+            <option value="bangalore">Bangalore</option>
+            <option value="hyderabad">Hyderabad</option>
+            <option value="kolkata">Kolkata</option>
+            <option value="delhi">Delhi</option>
+            <option value="trivandrum">Trivandrum</option>
+            <option value="kochi">Kochi</option>
+            <option value="ahmedabad">Ahmedabad</option>
+            <option value="vadodara">Vadodara</option>
+            <option value="indore">Indore</option>
+            <option value="raipur">Raipur</option>
+            <option value="bhopal">Bhopal</option>
+            <option value="bhubaneshwar">Bhubaneshwar</option>
+            <option value="lucknow">Lucknow</option>
+            <option value="varanasi">Varanasi</option>
+            <option value="goa">Goa</option>
+            <option value="jamshedpur">Jamshedpur</option>
+            <option value="patna">Patna</option>
+            <option value="vishakhapatnam">Vishakhapatnam</option>
+            <option value="guwahati">Guwahati</option>
+        </select>
+        <button id="filter-btn">Filter</button>
+    </div>
+    
+    <div class="legend-container">
+        <span class="legend-item">
+            <span class="legend-box yellow"></span> Saturday & Sunday
+        </span>
+        <span class="legend-item">
+            <span class="legend-box green"></span> Location-Specific Holiday
+        </span>
+        <span class="legend-item">
+            <span class="legend-box cyan"></span> Flex Holiday
+        </span>
+    </div>
+    
+    <div id="calendar"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

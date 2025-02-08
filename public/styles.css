@@ -1,0 +1,238 @@
+/* General styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Legend Container */
+.legend-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Legend Items */
+.legend-item {
+    display: flex;
+    align-items: center;
+}
+
+/* Color Boxes in Legend */
+.legend-box {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+/* Color Assignments */
+.yellow { background-color: #FFD700; }
+.green { background-color: #4CAF50; }
+.cyan { background-color: #00BCD4; }
+
+
+
+/* Toolbar */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Dropdown */
+#location-input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Button */
+#filter-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: white;
+    color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+#filter-btn:hover {
+    background-color: #2E7D32;
+    color: white;
+}
+
+/* Weekday Header */
+.weekday-header {
+    font-weight: bold;
+    color: #2E7D32; 
+    background-color: #e0e0e0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Holiday Colors */
+.calendar-day[data-holiday="green"] {
+    background-color: #4CAF50;
+}
+
+.calendar-day[data-holiday="cyan"] {
+    background-color: #00BCD4;
+}
+
+.calendar-day[data-holiday="yellow"] {
+    background-color: #FFD700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column;
+    }
+
+    #location-input, #filter-btn {
+        width: 100%;
+    }
+}
+
+
+
+/* Calendar container */
+#calendar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Month styling */
+.month {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 280px;
+}
+
+.month h2 {
+    font-size: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Days grid */
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding-top: 5px;
+}
+
+/* Day names row */
+.day-names {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 5px;
+}
+
+.day-name {
+    text-align: center;
+    font-size: 14px;
+    padding: 5px 0;
+}
+
+/* Calendar day styles */
+.calendar-day {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.calendar-day:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Empty days (for alignment) */
+.calendar-day.empty {
+    background: transparent;
+    cursor: default;
+}
+
+/* Holiday Colors */
+.calendar-day[data-holiday="true"] {
+    color: white;
+    font-weight: bold;
+}
+
+.calendar-day[data-holiday="green"] {
+    background-color: #4CAF50;
+}
+
+.calendar-day[data-holiday="cyan"] {
+    background-color: #00BCD4;
+}
+
+.calendar-day[data-holiday="yellow"] {
+    background-color: #FFD700;
+}
+
+/* Style for weekday headers */
+.weekday-header {
+    font-weight: bold;
+    background-color: #b0bec5;  /* Light gray-blue */
+    color: #263238;  /* Dark text for contrast */
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+}
+#location-select {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+    background: white;
+    cursor: pointer;
+}
+
+#location-select:focus {
+    border-color: #2E7D32;
+}
+/* Responsive design */
+@media (max-width: 768px) {
+    .month {
+        width: 90%;
+    }
+}
