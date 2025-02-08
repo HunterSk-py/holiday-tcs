@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     generateCalendar();
     document.getElementById("filter-btn").addEventListener("click", fetchAndRenderHolidays);
+    document.getElementById("location-select").addEventListener("change", function() {
+        location.reload(); // Refresh the page when a new location is selected
+    }); 
 });
 
 // Function to generate a 2025 calendar
