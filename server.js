@@ -4,11 +4,12 @@ const cors = require("cors");
 const path = require("path");
 
 // Initialize Firebase Admin SDK
-const serviceAccount = require("./firebase-key.json");
+const firebaseKey = Buffer.from(process.env.FIREBASE_KEY, "base64").toString("utf8");
 
 admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
+    credential: admin.credential.cert(JSON.parse(firebaseKey))
 });
+
 
 const db = admin.firestore();
 const app = express();
