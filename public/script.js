@@ -93,6 +93,13 @@ async function fetchAndRenderHolidays() {
 function colorHolidays(holidays, location) {
     let calendarCells = document.querySelectorAll(".calendar-day");
 
+    // Reset all previously colored holidays
+    calendarCells.forEach(cell => {
+        cell.style.backgroundColor = "#e0e0e0"; // Default color
+        cell.removeAttribute("data-holiday");
+        cell.removeAttribute("title");
+    });
+
     let holidayMap = {}; // Store holiday types and names for each date
 
     holidays.forEach(holiday => {
@@ -133,3 +140,4 @@ function colorHolidays(holidays, location) {
         });
     });
 }
+
