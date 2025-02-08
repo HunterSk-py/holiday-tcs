@@ -93,11 +93,23 @@ async function fetchAndRenderHolidays() {
 function colorHolidays(holidays, location) {
     let calendarCells = document.querySelectorAll(".calendar-day");
 
-    // Reset all previously colored holidays
+    // Reset only holiday colors, but keep weekends intact
     calendarCells.forEach(cell => {
-        cell.style.backgroundColor = "#e0e0e0"; // Default color
+        let date = cell.getAttribute("data-date");
+        let dayOfWeek = new Date(date).getDay();
+
+        if (cell.getAttribute("data-holiday") !== "yellow") {
+            cell.style.backgroundColor = "#e0e0e0"; // Reset to default
+        }
+
         cell.removeAttribute("data-holiday");
         cell.removeAttribute("title");
+
+        // Restore weekend colors
+        if (dayOfWeek === 0 || dayOfWeek === 6) {
+            cell.style.backgroundColor = "#FFD700"; // Yellow for weekends
+            cell.setAttribute("data-holiday", "yellow");
+        }
     });
 
     let holidayMap = {}; // Store holiday types and names for each date
@@ -140,4 +152,5 @@ function colorHolidays(holidays, location) {
         });
     });
 }
+
 
